@@ -1,5 +1,6 @@
 let filters = {};
 let productItems = [];
+let stash = [];
 
 $(".aside-item_count").click(() => {
   if (Object.keys(filters).length) {
@@ -54,6 +55,16 @@ $(document.body).on("input", function (event) {
     }
   }
 
+  if (targetId === "filter-stock") {
+    
+    if (event.target.checked) {
+      stash = productItems.filter((item) => !item.isStock);
+      productItems = productItems.filter((item) => item.isStock);
+    } else {
+      productItems = productItems.concat(stash);
+    }
+  }
+
   if (targetName === "enter-mark") {
     const targetValue = event.target.value;
     if (!filters["mark"]) filters["mark"] = [];
@@ -66,17 +77,25 @@ $(document.body).on("input", function (event) {
     filters[targetName] = [targetId];
   }
 });
+
 let count = 0;
+let invertCount = 0;
+let classNumber = 1;
 function renderProduct(pageNumber) {
   const ONE_PAGE = 10;
-  const allPage = Math.round(productItems.length / ONE_PAGE);
-  const allPageArr = [];
+  const allPage = Math.ceil(productItems.length / ONE_PAGE);
+  let allPageArr = [];
   let products = "";
+  let productsSecond = "";
   let paginate = "";
   let indent = 0;
 
   for (let i = count; i < allPage; i++) {
     allPageArr.push(i + 1);
+  }
+
+  if (allPageArr.length < 2) {
+    allPageArr = [];
   }
 
   if (pageNumber) {
@@ -112,37 +131,106 @@ function renderProduct(pageNumber) {
   $(".filter-list__item").remove();
   $(".product-filter__list-main").prepend(products);
 
+  const takedItemSecond = productItems.slice(indent, indent + 10);
+
+  takedItemSecond.forEach((item) => {
+    productsSecond =
+      productsSecond +
+      `<div class="menu-other-products__block">
+              <div class="menu-other-products__container">
+                <div class="menu-other-products__product">
+                  <div class="menu-other-products__row">
+                    <div class="menu-other-products__row-main">
+                      <div class="menu-other-products__img"></div>
+                      <div class="menu-other-products__name">
+                      ${item.name}
+                      </div>
+                    </div>
+                    <div class="menu-other-products__row-second">
+                      <div class="menu-other-products__availability">
+                        ${item.isStock ? "В наличии" : "Отсутствует"}
+                      </div>
+                      <div class="menu-other-products__price">
+                        <a
+                          href="javascript:void(0)"
+                          class="product-card_get_price"
+                          >Запросить цену</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu-other-products__buttons">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                  <div class="menu-other-products__break"></div>
+                </div>
+              </div>
+            </div>`;
+  });
+
+  $(".menu-other-products__block").remove();
+  $(".buy-header-main").after(productsSecond);
+
   $(".filter-pagination__wrapper ul li").remove();
 
   allPageArr.forEach((i) => {
     if (i < 2) {
-      paginate = paginate + `<li class="active">${i}</li>`;
+      paginate =
+        paginate + `<li class="${classNumber == i ? "active" : ""}">${i}</li>`;
     }
 
-    if (i > 1 && i < 4) {
-      paginate = paginate + `<li>${i}</li>`;
+    if (i > 1 && i < 4 + invertCount) {
+      paginate =
+        paginate + `<li class="${classNumber == i ? "active" : ""}">${i}</li>`;
     }
 
-    if (allPage > 6 && i === 4) {
+    if (allPage > 5 + invertCount && i == 4 + invertCount) {
       paginate = paginate + `<li>...</li>`;
     }
 
+    if (allPageArr.length === 2) {
+      return;
+    }
+
+    if (allPageArr.length === 3) {
+      return;
+    }
+
     if (i + 2 > allPage) {
-      paginate = paginate + `<li>${i}</li>`;
+      paginate =
+        paginate + `<li class="${classNumber == i ? "active" : ""}">${i}</li>`;
     }
   });
 
   $(".filter-pagination__wrapper ul").prepend(paginate);
 
+  if (allPageArr.length === 4) {
+    $(".filter-pagination__wrapper ul li").first().next().next().remove();
+  }
+
   $(".filter-pagination__wrapper ul li").click((elem) => {
     const pageNumber = $(elem.target).text();
+    classNumber = pageNumber;
 
     if (pageNumber === "...") {
       return;
     }
 
+    if (!$(elem.target).prev().length && pageNumber > 1) {
+      count = count - 1;
+      invertCount = invertCount - 1;
+    }
+
     if ($(elem.target).next().text() == "...") {
       count = count + 1;
+      invertCount = invertCount + 1;
     }
 
     renderProduct(pageNumber - 1);

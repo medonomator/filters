@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Telmark</title>
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+    <div class="aside-panel aside-filter">
+      <div class="aside-mobile__top">
+        <a href="javascript:void(0)" class="close__aside-mobile">
+          <i class="icons icon__close"></i>
+        </a>
+      </div>
+      <div class="aside-panel__body">
+        <div class="main-aside__first">
+          <div class="flex-jcsb">
+            <div class="aside-item_count">ПРИМЕНИТЬ</div>
+            <div class="aside-reset_btn">Сбросить</div>
+          </div>
+          <div class="aside-item aside-item__lined js-accordeon">
+            <div class="aside-item__title_wrapper flex-jcsbc">
+              <div class="aside-item_title js-accordeon-btn">НАЛИЧИЕ</div>
+              <div class="aside-item_arrow js-accordeon-btn active"></div>
+            </div>
+            <div class="aside-item__content active-content">
+              <ul class="aside-item_list">
+                <li>
+                  <input
+                    type="radio"
+                    name="asideAvailable"
+                    id="asideAll"
+                    checked="checked"
+                  />
+                  <label for="asideAll">Все</label>
+        
+                </li>
+                <li>
+                  <input type="radio" name="asideAvailable" id="asideStock" />
+                  <label for="asideStock">В наличии</label>
+                </li>
+                <li>
+                  <input type="radio" name="asideAvailable" id="asideOrder" />
+                  <label for="asideOrder">Под заказ</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="aside-item js-accordeon">
+            <div class="aside-item__title_wrapper flex-jcsbc">
+              <div class="aside-item_title js-accordeon-btn">МАРКА</div>
+              <div class="aside-item_arrow js-accordeon-btn active"></div>
+            </div>
+            <div class="aside-item__content active-content js-show_more">
+              <div class="aside-item_input__wrapper flex-jcsbc">
+                <input
+                  type="text"
+                  placeholder="Введите марку"
+                  class="aside-item_input"
+                />
+                <!-- <a href="javascript:void(0);" class="btn__show-items">
+                                <i class="icons icon__show-items"></i>
+                            </a> -->
+              </div>
+              <ul class="aside-item_list aside-item_list-more">
+                <li>
+                  <input type="checkbox" name="asideMark" id="asideSIP-4" />
+                  <label for="asideSIP-4">СИП-4</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="asideMark" id="asideRKGM" />
+                  <label for="asideRKGM">РКГМ</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="asideMark" id="asidePuGv1" />
+                  <label for="asidePuGv1">ПуГв</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="asideMark" id="asidePuGv2" />
+                  <label for="asidePuGv2">ПуГв</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="asideMark" id="asidePuGv3" />
+                  <label for="asidePuGv3">ПуГв</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="asideMark" id="asidePuGv4" />
+                  <label for="asidePuGv4">ПуГв</label>
+                </li>
+              </ul>
+              <div class="aside-item_show_more_btn dotted_text">
+                Показать еще
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-panel feedback">
+      <a href="javascript:void(0)" class="btn__close-modal">
+        <i class="icons icon__close"></i>
+      </a>
+      <div class="modal-panel__body">
+        <div class="feedback__form">
+          <span class="modal-panel__title"
+            >Оставьте контактные данные и мы свяжемся с вами</span
+          >
+          <form action="" class="send-form">
+            <input class="input-text" type="text" placeholder="ФИО" />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Электронная почта"
+            />
+            <div class="product-card_get_price__tel">
+              <span>+</span>
+              <input type="text" class="tel_region" value="7" maxlength="1" />
+              <input type="text" class="tel_number" maxlength="10" />
+            </div>
+            <textarea
+              class="input-textarea"
+              name=""
+              id=""
+              cols="10"
+              rows="3"
+            ></textarea>
+            <a href="javascript:void(0)" class="btn__attach">
+              <i class="icons icon__attach"></i>
+              <span>Прикрепить файл</span>
+            </a>
+            <a href="javascript:void(0);" class="btn__base make-request"
+              >Оформить заявку</a
+            >
+          </form>
+        </div>
+        <div class="feedback__contacts">
+          <div class="img">
+            <img src="./img/Слой_8.png" alt="woman" />
+          </div>
+          <div class="contacts">
+            <div class="contacts-img">
+              <img src="./img/Слой_7.png" alt="logo" />
+            </div>
+            <div class="contacts-info">
+              <span class="name">Наталья</span>
+              <span class="number"
+                ><a href="tel:+88006004091">8 880 600 40 91</a></span
+              >
+              <span class="time-work">Пн-Пт с 9 до 20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-panel add-product">
+      <a href="javascript:void(0)" class="btn__close-modal">
+        <i class="icons icon__close"></i>
+      </a>
+      <div class="modal-panel__body">
+        <div class="add-product-wrapper">
+          <span class="modal-panel__title">Ваш товар добавлен в корзину</span>
+          <div class="add-product__info">
+            <span class="img">
+              <img src="./img/Слой_13.png" alt="product" />
+            </span>
+            <span class="name"><a href="##">ПГРО 35</a></span>
+          </div>
+          <div class="add-product__controls">
+            <a href="javascript:void(0);" class="btn__base make-request"
+              >Оформить</a
+            >
+            <a href="javascript:void(0);" class="btn__base make-request"
+              >Продолжить</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-panel quick-order">
+      <a href="javascript:void(0)" class="btn__close-modal">
+        <i class="icons icon__close"></i>
+      </a>
+      <div class="modal-panel__body">
+        <div class="quick-order-wrapper">
+          <span class="modal-panel__title">Быстрый заказ</span>
+          <span class="modal-panel__text"
+            >В течении 15 минут менеджер свяжется с вами</span
+          >
+          <div class="quick-order__info">
+            <span class="img">
+              <img src="./img/Слой_13.png" alt="product" />
+            </span>
+            <div class="product-info">
+              <span class="name"><a href="##">ПГРО 35</a></span>
+              <div class="menu-info__input">
+                <form action="" class="number-meters">
+                  <input
+                    type="number"
+                    id="quick-order-input"
+                    value="1"
+                    min="1"
+                  />
+                  <button
+                    class="number-meters__btn up"
+                    type="button"
+                    onclick="changeMeters('inc', 'quick-order-input')"
+                  >
+                    <i class="icons icon__arrow-up"></i>
+                  </button>
+                  <button
+                    class="number-meters__btn down"
+                    type="button"
+                    onclick="changeMeters('dec', 'quick-order-input')"
+                  >
+                    <i class="icons icon__arrow-down"></i>
+                  </button>
+                </form>
+                м
+              </div>
+              <div class="menu-block__specifications">
+                <div class="menu-block__specifications-item">
+                  <span class="label">Марка:</span>
+                  <span class="value"><a href="##">АВБбШв</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Производитель:</span>
+                  <span class="value"><a href="##">Конкор</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Количество жил, шт:</span>
+                  <span class="value"><a href="##">4</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Сечение, мм2:</span>
+                  <span class="value"><a href="##">5</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="quick-order__bottom">
+            <div class="product-card_get_price__tel">
+              <span>+</span>
+              <input type="text" class="tel_region" value="7" maxlength="1" />
+              <input type="text" class="tel_number" maxlength="10" />
+            </div>
+            <a href="javascript:void(0);" class="btn__base make-request"
+              >Уточнить цену</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-panel check-price">
+      <a href="javascript:void(0)" class="btn__close-modal">
+        <i class="icons icon__close"></i>
+      </a>
+      <div class="modal-panel__body">
+        <div class="check-price-wrapper">
+          <span class="modal-panel__title">Уточнить цену</span>
+          <span class="modal-panel__text"
+            >В течении 15 минут менеджер свяжется с вами</span
+          >
+          <div class="check-price__info">
+            <span class="img">
+              <img src="./img/Слой_13.png" alt="product" />
+            </span>
+            <div class="product-info">
+              <span class="name"><a href="##">ПГРО 35</a></span>
+              <div class="menu-info__input">
+                <form action="" class="number-meters">
+                  <input
+                    type="number"
+                    id="check-price-input"
+                    value="1"
+                    min="1"
+                  />
+                  <button
+                    class="number-meters__btn up"
+                    type="button"
+                    onclick="changeMeters('inc', 'check-price-input')"
+                  >
+                    <i class="icons icon__arrow-up"></i>
+                  </button>
+                  <button
+                    class="number-meters__btn down"
+                    type="button"
+                    onclick="changeMeters('dec', 'check-price-input')"
+                  >
+                    <i class="icons icon__arrow-down"></i>
+                  </button>
+                </form>
+                м
+              </div>
+              <div class="menu-block__specifications">
+                <div class="menu-block__specifications-item">
+                  <span class="label">Марка:</span>
+                  <span class="value"><a href="##">АВБбШв</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Производитель:</span>
+                  <span class="value"><a href="##">Конкор</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Количество жил, шт:</span>
+                  <span class="value"><a href="##">4</a></span>
+                </div>
+                <div class="menu-block__specifications-item">
+                  <span class="label">Сечение, мм2:</span>
+                  <span class="value"><a href="##">5</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="check-price__bottom">
+            <div class="product-card_get_price__tel">
+              <span>+</span>
+              <input type="text" class="tel_region" value="7" maxlength="1" />
+              <input type="text" class="tel_number" maxlength="10" />
+            </div>
+            <a href="javascript:void(0);" class="btn__base make-request"
+              >Уточнить цену</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aside-panel aside-menu">
+      <div class="aside-mobile__top">
+        <a href="javascript:void(0)" class="close__aside-mobile">
+          <i class="icons icon__close"></i>
+        </a>
+      </div>
+      <div class="aside-panel__body">
+        <nav class="nav">
+          <ul class="nav-ul__main">
+            <li class="nav-ul__main-li">
+              <div class="nav-ul__main-li__name flex-jcsbc">
+                <a class="nav-name active" href="#">КАБЕЛЬ И ПРОВОД</a>
+                <div class="icons icon__arrow-down"></div>
+              </div>
+              <ul class="nav-submenu">
+                <li class="submenu-li">
+                  <div class="flex-jcsbc">
+                    <a class="li-link" href="#">Кабель силовой</a>
+                    <div class="icons icon__arrow-right"></div>
+                  </div>
+                  <ul class="submenu-submenu">
+                    <li><a href="#">Кабель силовой</a></li>
+                    <li><a href="#">Термостойкий кабель</a></li>
+                    <li><a href="#">Специальные кабели</a></li>
+                    <li><a href="#">Кабели монтажные</a></li>
+                  </ul>
+                </li>
+                <li class="submenu-li">
+                  <a class="li-link" href="#">Термостойкий кабель</a>
+                </li>
+                <li class="submenu-li">
+                  <div class="flex-jcsbc">
+                    <a class="li-link" href="#">Специальные кабели</a>
+                  </div>
+                </li>
+                <li class="submenu-li">
+                  <div class="flex-jcsbc">
+                    <a class="li-link" href="#">Кабели монтажные</a>
+                  </div>
+                </li>
+                <li class="submenu-li">
+                  <div class="flex-jcsbc">
+                    <a class="li-link" href="#">Кабели высоковольтные</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex-jcsbc">
+                <a class="nav-name" href="#">О КОМПАНИИ</a>
+                <div class="icons icon__arrow-down"></div>
+              </div>
+            </li>
+            <li>
+              <a class="nav-name" href="#">ОПЛАТА И ДОСТАВКА</a>
+            </li>
+            <li>
+              <a class="nav-name" href="#">ПОСТАВЩИКАМ</a>
+            </li>
+            <li>
+              <a class="nav-name" href="#">КОНТАКТЫ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header-inner">
+            <div class="header-infopanel">
+              <a href="/" class="header-logo"></a>
+              <div class="header-tagline">
+                Кабель и провод <br />
+                оптом по всей России
+              </div>
+              <div class="header-city__wrapper js-city">
+                <div class="header-city_name dotted_text">Санкт-Петербург</div>
+                <div class="icons icon__arrow-down"></div>
+                <ul class="header-city__list">
+                  <li data-city="Москва">Москва</li>
+                  <li data-city="Санкт-Петербург">Санкт-Петербург</li>
+                  <li data-city="Краснодар">Краснодар</li>
+                  <li data-city="Якутск">Якутск</li>
+                </ul>
+              </div>
+              <div class="header-btns">
+                <a href="javascript:void(0);" class="btn__icon settings">
+                  <i class="icons icon__settings"></i>
+                </a>
+                <a href="javascript:void(0);" class="btn__icon favorite">
+                  <i class="icons icon__black-favorite"></i>
+                </a>
+                <a href="javascript:void(0);" class="btn__icon cart">
+                  <i class="icons icon__cart"></i>
+                  <span class="product-count">0</span>
+                </a>
+              </div>
+              <div class="header-search__wrapper">
+                <input
+                  class="header-search"
+                  type="text"
+                  placeholder="Поиск по сайту"
+                />
+                <div class="icons icon__search"></div>
+              </div>
+              <div class="header-info">
+                <div class="icons icon__calendar"></div>
+                <div class="header-info__inner">
+                  <div class="header-info_data">Пн-Пт с 9 до 20</div>
+                  <div class="header-info_tagline">
+                    Отгрузка по выходным дням
+                  </div>
+                </div>
+              </div>
+              <div class="header-info header-mail">
+                <div class="icons icon__mail"></div>
+                <div class="header-info__inner">
+                  <a href="mailto:sale@telmark.ru" class="header-info_data"
+                    >sale@telmark.ru</a
+                  >
+                  <div class="header-info_tagline">Прием заявок 24/7</div>
+                </div>
+              </div>
+              <div class="header-info header-tel">
+                <div class="icons icon__phone"></div>
+                <div class="header-info__inner">
+                  <a href="tel:+88006004091" class="header-info_data__tel"
+                    >8 800 600 40 91</a
+                  >
+                  <div class="header-info_tagline dotted_text btn__feedback">
+                    Заказать звонок
+                  </div>
+                </div>
+              </div>
+              <div class="header-break"></div>
+              <a href="javascript:void(0);" class="btn__icon show__menu">
+                <i class="icons icon__menu"></i>
+              </a>
+            </div>
+            <nav class="nav">
+              <ul class="nav-ul__main">
+                <li class="nav-ul__main-li">
+                  <div class="nav-ul__main-li__name flex-jcsbc">
+                    <a class="nav-name active" href="#">КАБЕЛЬ И ПРОВОД</a>
+                    <div class="icons icon__arrow-down"></div>
+                  </div>
+                  <ul class="nav-submenu">
+                    <li class="submenu-li">
+                      <div class="flex-jcsbc">
+                        <a class="li-link" href="#">Кабель силовой</a>
+                        <div class="icons icon__arrow-right"></div>
+                      </div>
+                      <ul class="submenu-submenu">
+                        <li><a href="#">Кабель силовой</a></li>
+                        <li><a href="#">Термостойкий кабель</a></li>
+                        <li><a href="#">Специальные кабели</a></li>
+                        <li><a href="#">Кабели монтажные</a></li>
+                      </ul>
+                    </li>
+                    <li class="submenu-li">
+                      <a class="li-link" href="#">Термостойкий кабель</a>
+                    </li>
+                    <li class="submenu-li">
+                      <div class="flex-jcsbc">
+                        <a class="li-link" href="#">Специальные кабели</a>
+                      </div>
+                    </li>
+                    <li class="submenu-li">
+                      <div class="flex-jcsbc">
+                        <a class="li-link" href="#">Кабели монтажные</a>
+                      </div>
+                    </li>
+                    <li class="submenu-li">
+                      <div class="flex-jcsbc">
+                        <a class="li-link" href="#">Кабели высоковольтные</a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="flex-jcsbc">
+                    <a class="nav-name" href="#">О КОМПАНИИ</a>
+                    <div class="icons icon__arrow-down"></div>
+                  </div>
+                </li>
+                <li>
+                  <a class="nav-name" href="#">ОПЛАТА И ДОСТАВКА</a>
+                </li>
+                <li>
+                  <a class="nav-name" href="#">ПОСТАВЩИКАМ</a>
+                </li>
+                <li>
+                  <a class="nav-name" href="#">КОНТАКТЫ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-breadcrumbs">
+        <div class="container">
+          <div class="breadcrumbs__wrapper">
+            <span
+              ><a href="##">Главная</a>
+              <span class="breadcrumbs-line">/</span></span
+            >
+            <span
+              ><a href="##">Каталог</a>
+              <span class="breadcrumbs-line">/</span></span
+            >
+            <span>Кабели силовые <span class="breadcrumbs-line">/</span></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <a href="javascript:void(0);" class="btn__icon show__filter">
+          <i class="icons icon__filter"></i>
+          <span>Показать фильтр</span>
+        </a>
+      </div>
+
+      <div class="container">
+        <aside class="main-aside">
+          <div class="main-aside__first">
+            <div class="flex-jcsb">
+              <div class="aside-item_count">ПРИМЕНИТЬ</div>
+              <div class="aside-reset_btn">Сбросить</div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">НАЛИЧИЕ</div>
+                <div class="aside-item_arrow js-accordeon-btn active"></div>
+              </div>
+              <div class="aside-item__content active-content">
+                <ul class="aside-item_list">
+                  <li>
+                    <input
+                      type="radio"
+                      name="available"
+                      id="all"
+                      checked="checked"
+                    />
+                    <label for="all">Все</label>
+                  
+                  </li>
+                  <li>
+                    <input type="radio" name="available" id="stock" />
+                    <label for="stock">В наличии</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="available" id="order" />
+                    <label for="order">Под заказ</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">МАРКА</div>
+                <div class="aside-item_arrow js-accordeon-btn active"></div>
+              </div>
+              <div class="aside-item__content active-content js-show_more">
+                <div class="aside-item_input__wrapper flex-jcsbc">
+                  <input
+                    type="text"
+                    placeholder="Введите марку"
+                    class="aside-item_input"
+                  />
+                  <a
+                    href="javascript:void(0);"
+                    class="btn__show-items trademark__btn"
+                  >
+                    <i class="icons icon__show-items"></i>
+                  </a>
+                </div>
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="mark" id="SIP-4" />
+                    <label for="SIP-4">СИП-4</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="RKGM" />
+                    <label for="RKGM">РКГМ</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv" />
+                    <label for="PuGv">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv1" />
+                    <label for="PuGv1">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv2" />
+                    <label for="PuGv2">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv3" />
+                    <label for="PuGv3">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv4" />
+                    <label for="PuGv4">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv5" />
+                    <label for="PuGv5">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv6" />
+                    <label for="PuGv6">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv7" />
+                    <label for="PuGv7">ПуГв</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="mark" id="PuGv8" />
+                    <label for="PuGv8">ПуГв</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Количество жил
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Кабель силовой
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Термостойкий кабель
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Специальные кабели
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item aside-item__lined js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Кабели монтажные
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+            <div class="aside-item js-accordeon">
+              <div class="aside-item__title_wrapper flex-jcsbc">
+                <div class="aside-item_title js-accordeon-btn">
+                  Кабели высоковольтные
+                </div>
+                <div class="aside-item_arrow js-accordeon-btn"></div>
+              </div>
+              <div class="aside-item__content js-show_more">
+                <ul
+                  class="trademark__list aside-item_list aside-item_list-more"
+                >
+                  <li>
+                    <input type="checkbox" name="vein" id="oneVein" />
+                    <label for="oneVein">Одна жила</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="twoVein" />
+                    <label for="twoVein">Две жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="ThreeVein" />
+                    <label for="ThreeVein">Три жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FourVein" />
+                    <label for="FourVein">Четыре жилы</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="vein" id="FiveVein" />
+                    <label for="FiveVein">Пять жилы</label>
+                  </li>
+                </ul>
+                <div class="aside-item_show_more_btn dotted_text">
+                  Показать еще
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <main class="main">
+          <div class="menu__menu-product">
+            <div class="menu__row">
+              <div class="menu__product-block">
+                <div class="menu-block__button">В наличии</div>
+                <div class="menu-block__img"></div>
+              </div>
+              <div class="menu-block__info">
+                <div class="menu-info__title">Кабель КНРПк 10х1</div>
+                <div class="menu-info__input">
+                  <form action="" class="number-meters">
+                    <input type="number" id="product-input" value="1" min="1" />
+                    <button
+                      class="number-meters__btn up"
+                      type="button"
+                      onclick="changeMeters('inc', 'product-input')"
+                    >
+                      <i class="icons icon__arrow-up"></i>
+                    </button>
+                    <button
+                      class="number-meters__btn down"
+                      type="button"
+                      onclick="changeMeters('dec', 'product-input')"
+                    >
+                      <i class="icons icon__arrow-down"></i>
+                    </button>
+                  </form>
+                  м
+                  <div class="menu-info__price">
+                    Цена <br />
+                    <span class="price">По запросу</span>
+                  </div>
+                </div>
+                <div class="menu-info__buttons">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn__significant btn__quick-purchase"
+                    >Купить в 1 клик</a
+                  >
+                  <a href="javascript:void(0);" class="btn__base btn__add-cart"
+                    >В корзину</a
+                  >
+                  <a href="javascript:void(0);" class="add-favorite">
+                    <i class="icons icon__black-favorite"></i>
+                  </a>
+                </div>
+                <div class="menu-block__specifications">
+                  <div class="menu-block__specifications-item">
+                    <span class="label">Марка:</span>
+                    <span class="value"><a href="##">АВБбШв</a></span>
+                  </div>
+                  <div class="menu-block__specifications-item">
+                    <span class="label">Производитель:</span>
+                    <span class="value"><a href="##">Конкор</a></span>
+                  </div>
+                  <div class="menu-block__specifications-item">
+                    <span class="label">Количество жил, шт:</span>
+                    <span class="value"><a href="##">4</a></span>
+                  </div>
+                  <div class="menu-block__specifications-item">
+                    <span class="label">Сечение, мм2:</span>
+                    <span class="value"><a href="##">5</a></span>
+                  </div>
+                  <div class="menu-block__specifications-item">
+                    <span class="label"
+                      ><a href="javascript:void(0)" class="btn__other-features">
+                        Другие характеристики</a
+                      ></span
+                    >
+                    <span class="value"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-block__form">
+              <div class="menu-form__title">Есть вопрос?</div>
+              <div class="menu-form__subtitle">
+                Ваш персональный менеджер ответит на все вопросы в течении 15
+                минут.
+              </div>
+              <div class="menu-form__line">
+                <div class="menu-line__logo">
+                  <img src="./img/Слой_7.png" alt="logo" />
+                </div>
+                <div class="menu-line__title">
+                  Наталья
+                  <div class="menu-line__subtitle">
+                    8 880 600 40 91 <br />
+                    <div class="menu-line__date">Пн-Пт с 9 до 20</div>
+                  </div>
+                </div>
+                <div class="menu-line__woman">
+                  <img src="./img/Слой_8.png" alt="woman" />
+                </div>
+              </div>
+              <div class="menu-line__form">
+                + <input type="tel" value="7" maxlength="1" /> (<input
+                  type="tel"
+                  maxlength="3"
+                />)
+                <input type="tel" maxlength="7" />
+                <a href="javascript:void(0);" class="btn__base wait-call"
+                  >Жду звонка</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="menu-block__advantages">
+            <div class="menu-advantages__container">
+              <div class="menu-advantages__row">
+                <div class="menu-advantages__block">
+                  <span class="icons icon__sale"></span>
+                  <div class="menu-advantages__text">Скидки до 20%</div>
+                </div>
+                <div class="menu-advantages__block">
+                  <span class="icons icon__delivery"></span>
+                  <div class="menu-advantages__text">Доставка бесплатно</div>
+                </div>
+                <div class="menu-advantages__block">
+                  <span class="icons icon__wholesale-price"></span>
+                  <div class="menu-advantages__text">Цена оптовая</div>
+                </div>
+                <div class="menu-advantages__block">
+                  <span class="icons icon__warehouse"></span>
+                  <div class="menu-advantages__text">Свой склад</div>
+                </div>
+                <div class="menu-advantages__block">
+                  <span class="icons icon__insurance"></span>
+                  <div class="menu-advantages__text">Страхование грузов</div>
+                </div>
+                <div class="menu-advantages__block">
+                  <span class="icons icon__deadlines"></span>
+                  <div class="menu-advantages__text">Сжатые сроки</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-product tabs-container">
+            <div class="tabs-product__triggers tabs__triggers">
+              <a
+                href="#tab-description"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Описание</a
+              >
+              <a
+                href="#tab-specifications"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Все характеристики</a
+              >
+              <a
+                href="#tab-other-sections"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Другие сечения</a
+              >
+              <a
+                href="#tab-certificates"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Сертификаты</a
+              >
+              <a
+                href="#tab-reviews"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Отзывы</a
+              >
+              <a
+                href="#tab-contract"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Договор</a
+              >
+              <a
+                href="#tab-bank-details"
+                class="tabs-product__trigger-item tabs__trigger-item"
+                >Реквизиты</a
+              >
+            </div>
+            <div class="tabs-product__content tabs__content">
+              <div
+                id="tab-description"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                Описание
+              </div>
+              <div
+                id="tab-specifications"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                <div class="product-specifications">
+                  <div class="product-specifications__column">
+                    <div class="product-specifications__item">
+                      <span class="label">Материал жилы</span>
+                      <span class="value"><a href="##">алюминий</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Бренд</span>
+                      <span class="value"><a href="##">Конкорд</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Материал изоляции</span>
+                      <span class="value"
+                        ><a href="##">поливинилхлоридный пластикат</a></span
+                      >
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Количество жил</span>
+                      <span class="value"><a href="##">4</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Типоразмер</span>
+                      <span class="value">4х4ок (N)-0,66</span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Материал оболочки</span>
+                      <span class="value"
+                        ><a href="##"
+                          >ПВХ пластикат пониженной горючести</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <div class="product-specifications__column">
+                    <div class="product-specifications__item">
+                      <span class="label">Марка товара</span>
+                      <span class="value"><a href="##">АВБШв</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Тип изделия</span>
+                      <span class="value"><a href="##">Кабель силовой</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Материал изоляции</span>
+                      <span class="value"
+                        ><a href="##">поливинилхлоридный пластикат</a></span
+                      >
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Напряжение, В</span>
+                      <span class="value"><a href="##">600</a></span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Вес, г</span>
+                      <span class="value">500</span>
+                    </div>
+                    <div class="product-specifications__item">
+                      <span class="label">Наличие экрана (CA)</span>
+                      <span class="value"><a href="##">нет</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="tab-other-sections"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                <div class="menu-block__other-products">
+                  <div class="menu-other-products__title">
+                    Другие сечения кабеля
+                  </div>
+                  <div class="menu-other-products__block">
+                    <div class="menu-other-products__container">
+                      <div class="menu-other-products__product">
+                        <div class="menu-other-products__row">
+                          <div class="menu-other-products__row-main">
+                            <div class="menu-other-products__img"></div>
+                            <div class="menu-other-products__name">
+                              Кабель ВВГнг(A)-LS 3х2,5-0,66
+                            </div>
+                          </div>
+                          <div class="menu-other-products__row-second">
+                            <div class="menu-other-products__availability">
+                              В наличии
+                            </div>
+                            <div class="menu-other-products__price">
+                              <a
+                                href="javascript:void(0)"
+                                class="product-card_get_price"
+                                >Запросить цену</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="menu-other-products__buttons">
+                          <a
+                            href="javascript:void(0);"
+                            class="btn__base btn__add-cart"
+                            >В корзину</a
+                          >
+                          <a href="javascript:void(0);" class="add-favorite">
+                            <i class="icons icon__grey-favorite"></i>
+                          </a>
+                        </div>
+                        <div class="menu-other-products__break"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="tab-certificates"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                Сертификаты
+              </div>
+              <div
+                id="tab-reviews"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                Отзывы
+              </div>
+              <div
+                id="tab-contract"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                Договор
+              </div>
+              <div
+                id="tab-bank-details"
+                class="tabs-product__content-item tabs__content-item"
+              >
+                Маркировка
+              </div>
+            </div>
+          </div>
+
+          <div class="section-popular">
+            <h2 class="popular-title">С этим товаром смотрят</h2>
+            <div class="slider__similar-container slider-container">
+              <div class="slider__similar-track slider-track">
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__similar-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-buttons">
+              <button class="btn__similar-prev slider-btn btn__left"></button>
+              <button class="btn__similar-next slider-btn btn__right"></button>
+            </div>
+          </div>
+          <div class="section-popular">
+            <h2 class="popular-title">Ранее просмотренные товары</h2>
+            <div class="slider__viewed-container slider-container">
+              <div class="slider__viewed-track slider-track">
+                <div
+                  class="slider__viewed-item slider__viewed-item product-card"
+                >
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="slider__viewed-item product-card">
+                  <div class="product-card_img"></div>
+                  <div class="product-card_title">
+                    Кабель ВВГнг(А)-LS <br />
+                    3x2,5-0,66
+                  </div>
+                  <div class="product-card_stock">
+                    <div class="card-stock_img"></div>
+                    <span>В наличии</span>
+                  </div>
+                  <a href="javascript:void(0)" class="product-card_get_price"
+                    >Запросить цену</a
+                  >
+                  <div class="product-buy__wrapper">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn__base btn__add-cart"
+                      >В корзину</a
+                    >
+                    <a href="javascript:void(0);" class="add-favorite">
+                      <i class="icons icon__grey-favorite"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-buttons">
+              <button class="btn__viewed-prev slider-btn btn__left"></button>
+              <button class="btn__viewed-next slider-btn btn__right"></button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <div class="footer-description">
+            <div class="description-title">Телмарк</div>
+            <div class="description-content">
+              Информация на сайте о технических характеристиках, наличии на
+              складе, стоимости и изображениях товаров не является публичной
+              офертой
+            </div>
+            <img src="./img/footer-arrow.png" class="description-img" />
+          </div>
+          <ul class="footer-links__first">
+            <li class="links__item">Каталог</li>
+            <li class="links__item">О компании</li>
+            <li class="links__item">Оплата и доставка</li>
+            <li class="links__item">Сервисы</li>
+          </ul>
+          <ul class="footer-links__second">
+            <li class="links__item">Вакансии</li>
+            <li class="links__item">Поставщикам</li>
+            <li class="links__item">Контакты</li>
+          </ul>
+          <ul class="info-first">
+            <li class="footer-icon__location">
+              198216, Санкт-Петербург, <br />
+              Ленинский пр., д.140, лит Е, <br />
+              офис 218
+            </li>
+            <li class="footer-icon__clock">
+              пн-пт с 9 до 20 <br />
+              прием заявок круглосуточно
+            </li>
+          </ul>
+          <ul class="info-second">
+            <li class="footer-icon__phone">
+              Телефон(Москва): 7 945 374 50 21 <br />
+              Телефон(Санкт-Петербург): 7 812 603 49 51
+            </li>
+            <li class="footer-icon__mail">
+              <a href="mailto:sale@telmark">sale@telmark.ru</a>
+            </li>
+            <li class="footer-icon__icq">@telmark</li>
+            <li class="footer-icon__telegram">@telmarkru</li>
+          </ul>
+          <div class="footer-break"></div>
+        </div>
+      </div>
+    </footer>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/filters.js"></script>
+  </body>
+</html>
